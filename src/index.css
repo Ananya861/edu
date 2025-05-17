@@ -1,0 +1,323 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* White background */
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 33 30% 60%; /* Light brown primary color */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 33 25% 85%; /* Light brown secondary color */
+    --secondary-foreground: 33 40% 30%;
+
+    --muted: 33 10% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 33 30% 90%;
+    --accent-foreground: 33 30% 45%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 33 20% 90%;
+    --input: 33 20% 90%;
+    --ring: 33 30% 60%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 33 30% 98%;
+    --sidebar-foreground: 33 5.3% 26.1%;
+    --sidebar-primary: 33 30% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 33 30% 90%;
+    --sidebar-accent-foreground: 33 30% 45%;
+    --sidebar-border: 33 30% 90%;
+    --sidebar-ring: 33 30% 60%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 33 30% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 33 25% 25%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 33 25% 20%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 33 20% 25%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 33 25% 20%;
+    --input: 33 25% 20%;
+    --ring: 33 30% 50%;
+    
+    --sidebar-background: 33 20% 10%;
+    --sidebar-foreground: 33 4.8% 95.9%;
+    --sidebar-primary: 33 30% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 33 20% 25%;
+    --sidebar-accent-foreground: 33 4.8% 95.9%;
+    --sidebar-border: 33 20% 15%;
+    --sidebar-ring: 33 30% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-white text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+/* Existing classes */
+.edu-card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+/* Update logo hover color to match the brown theme */
+.logo:hover {
+  filter: drop-shadow(0 0 2em #B89F7Aaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #B89F7Aaa);
+}
+
+/* Change animated text gradient to brown tones */
+.text-gradient-animated {
+  background: linear-gradient(90deg, #B89F7A, #D2C2A5, #E5DBC8, #B89F7A);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Update buttons to use brown */
+.btn-gradient {
+  @apply bg-gradient-to-r from-[#B89F7A] to-[#D2C2A5] hover:from-[#D2C2A5] hover:to-[#B89F7A] transition-all duration-300 text-white;
+}
+
+/* Update text gradient */
+.text-gradient {
+  @apply bg-gradient-to-r from-[#8C7A5B] to-[#D2C2A5] bg-clip-text text-transparent;
+}
+
+/* Update animated text gradient */
+.text-animate-gradient {
+  background: linear-gradient(90deg, #B89F7A, #D2C2A5, #E5DBC8);
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: textGradient 8s linear infinite;
+}
+
+/* Update pastel gradient backgrounds */
+.bg-pastel-gradient {
+  background: linear-gradient(135deg, #F5F0E6, #E5DBC8, #D2C2A5, #F5F0E6);
+  background-size: 700% 700%;
+  animation: gradient-shift 30s ease infinite;
+}
+
+.bg-pastel-radial {
+  background: radial-gradient(circle, rgba(245,240,230,1) 0%, rgba(229,219,200,1) 50%, rgba(210,194,165,1) 100%);
+  background-size: 200% 200%;
+  animation: pulse 15s ease infinite;
+}
+
+@keyframes pulse {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+.pastel-shadow-blue { box-shadow: 0 4px 20px -2px rgba(214, 230, 255, 0.5); }
+.pastel-shadow-teal { box-shadow: 0 4px 20px -2px rgba(215, 249, 248, 0.5); }
+.pastel-shadow-yellow { box-shadow: 0 4px 20px -2px rgba(255, 255, 234, 0.5); }
+.pastel-shadow-amber { box-shadow: 0 4px 20px -2px rgba(255, 248, 223, 0.5); }
+.pastel-shadow-orange { box-shadow: 0 4px 20px -2px rgba(255, 240, 212, 0.5); }
+.pastel-shadow-pink { box-shadow: 0 4px 20px -2px rgba(251, 224, 224, 0.5); }
+.pastel-shadow-purple { box-shadow: 0 4px 20px -2px rgba(229, 212, 239, 0.5); }
+
+/* Animated background patterns */
+.bg-pattern-grid {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: patternShift 60s linear infinite;
+}
+
+@keyframes patternShift {
+  0% { background-position: 0 0; }
+  100% { background-position: 50px 50px; }
+}
+
+/* Interactive hover card */
+.hover-card {
+  transition: all 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Animated borders */
+.animated-border {
+  position: relative;
+  border-radius: inherit; 
+}
+
+.animated-border::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(45deg, var(--primary), var(--accent), var(--primary));
+  background-size: 200% 200%;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: border-rotate 4s linear infinite;
+}
+
+@keyframes border-rotate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Advanced gradient text with animation */
+.text-gradient-animated {
+  background: linear-gradient(-45deg, #d6e6ff, #e5d4ef, #fbe0e0, #fff0d4);
+  background-size: 300%;
+  animation: gradient-animation 15s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+@keyframes gradient-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Advanced cursor effects - requires JS to implement fully */
+.cursor-glow {
+  transition: background-position 0.5s;
+  background: radial-gradient(circle at var(--x) var(--y), rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%);
+}
+
+/* Additional utility classes for advanced backgrounds */
+.mesh-gradient-bg {
+  background: radial-gradient(at 21% 33%, hsla(222, 95%, 70%, 0.2) 0px, transparent 50%),
+              radial-gradient(at 79% 32%, hsla(343, 100%, 80%, 0.1) 0px, transparent 50%),
+              radial-gradient(at 52% 99%, hsla(197, 100%, 72%, 0.2) 0px, transparent 50%);
+}
+
+/* Glow effect utility */
+.glow-effect {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 
+              0 0 20px rgba(255, 255, 255, 0.3), 
+              0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.dark .glow-effect {
+  box-shadow: 0 0 10px rgba(102, 102, 255, 0.5),
+              0 0 20px rgba(102, 102, 255, 0.3),
+              0 0 30px rgba(102, 102, 255, 0.1);
+}
+
+/* New pastel color utility classes */
+.bg-pastel-gradient {
+  background: linear-gradient(135deg, #d6e6ff, #d7f9f8, #ffffea, #fff8df, #fff0d4, #fbe0e0, #e5d4ef);
+  background-size: 700% 700%;
+  animation: gradient-shift 30s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.text-pastel-blue { color: #d6e6ff; }
+.text-pastel-teal { color: #d7f9f8; }
+.text-pastel-yellow { color: #ffffea; }
+.text-pastel-amber { color: #fff8df; }
+.text-pastel-orange { color: #fff0d4; }
+.text-pastel-pink { color: #fbe0e0; }
+.text-pastel-purple { color: #e5d4ef; }
+
+.border-pastel-blue { border-color: #d6e6ff; }
+.border-pastel-teal { border-color: #d7f9f8; }
+.border-pastel-yellow { border-color: #ffffea; }
+.border-pastel-amber { border-color: #fff8df; }
+.border-pastel-orange { border-color: #fff0d4; }
+.border-pastel-pink { border-color: #fbe0e0; }
+.border-pastel-purple { border-color: #e5d4ef; }
+
+/* New transition duration for color changes */
+.duration-3000 {
+  transition-duration: 3000ms;
+}
+
+/* Pastel card variations */
+.card-pastel-blue {
+  @apply bg-pastel-blue/50 backdrop-blur-md border border-pastel-blue shadow-lg hover:shadow-pastel-blue/30 transition-all duration-300;
+}
+
+.card-pastel-teal {
+  @apply bg-pastel-teal/50 backdrop-blur-md border border-pastel-teal shadow-lg hover:shadow-pastel-teal/30 transition-all duration-300;
+}
+
+.card-pastel-yellow {
+  @apply bg-pastel-yellow/50 backdrop-blur-md border border-pastel-yellow shadow-lg hover:shadow-pastel-yellow/30 transition-all duration-300;
+}
+
+.card-pastel-amber {
+  @apply bg-pastel-amber/50 backdrop-blur-md border border-pastel-amber shadow-lg hover:shadow-pastel-amber/30 transition-all duration-300;
+}
+
+.card-pastel-orange {
+  @apply bg-pastel-orange/50 backdrop-blur-md border border-pastel-orange shadow-lg hover:shadow-pastel-orange/30 transition-all duration-300;
+}
+
+.card-pastel-pink {
+  @apply bg-pastel-pink/50 backdrop-blur-md border border-pastel-pink shadow-lg hover:shadow-pastel-pink/30 transition-all duration-300;
+}
+
+.card-pastel-purple {
+  @apply bg-pastel-purple/50 backdrop-blur-md border border-pastel-purple shadow-lg hover:shadow-pastel-purple/30 transition-all duration-300;
+}
